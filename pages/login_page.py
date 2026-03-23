@@ -16,6 +16,13 @@ class LoginPage:
     def enterPassword(self, password):
         self.driver.find_element(*self.passwordInput).send_keys(password)
 
+
+# Needed to create this because now we are not writing login in test_login.py
+    def login(self,username,password):
+        self.enterUsername(username)
+        self.enterPassword(password)
+        self.clickLogin()
+
     def clickLogin(self):
         self.driver.find_element(*self.submitBtn).click()
 
